@@ -1,0 +1,37 @@
+target/
+infrastrucure/development/database
+
+!.mvn/wrapper/maven-wrapper.jar
+
+### Project ###
+node_modules/
+dist/
+npm-debug.log
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### VCode ###
+.vscode/
+
+### Misc ###
+.DS_Store
