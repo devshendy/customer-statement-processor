@@ -82,8 +82,14 @@
 export default {
   name: 'ValidationResult',
   props: {
-    file: Object,
-    default: () => null
+    file: {
+      type: Object,
+      default: () => {}
+    },
+    valid: {
+      type: Boolean,
+      default: false
+    }
   },
   data () {
     return {

@@ -3,12 +3,14 @@
     <div class="col-12 q-mt-lg" style="margin-top: 100px">
       <div class="row justify-center">
         <div class="col-7 q-mr-md">
-          <validation-result
+          <validation-table></validation-table>
+          <!-- <validation-result
             :file="selectedFile"
-          />
+            :valid="false"
+          /> -->
         </div>
 
-        <div class="col-4 text-center">
+        <!-- <div class="col-4 text-center">
           <div class="upload-btn-wrapper col-12">
             <q-btn
               class="full-width"
@@ -46,7 +48,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -83,6 +85,7 @@
 
 <script>
 import ValidationResult from './ValidationResult'
+import ValidationTable from './ValidationTable'
 
 const UPLOADED_FILE_STATUS = {
   IN_PROGRESS: 'IN_PROGRESS',
@@ -93,7 +96,8 @@ const UPLOADED_FILE_STATUS = {
 export default {
   name: 'PageIndex',
   components: {
-    ValidationResult
+    ValidationResult,
+    ValidationTable
   },
   data () {
     return {
@@ -117,7 +121,27 @@ export default {
 
       if (!fileList.length) return
 
-      this.addFileToUploadeFileList(fileList[0])
+      const file = fileList[0]
+      const formData = new FormData()
+
+      // const data = {
+      //   uploadedFile: file
+      // }
+
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+
+      formData.append('uploadedFile', file)
+      this.addFileToUploadeFileList(file)
+
+      console.log(formData.get('uploadedFile'))
+
+      this.$axios.post('http://localhost:9090/uploads', formData, config)
+        .then(response => console.log(response))
+        .catch(error => console.error(`APP-ERROR: ${error}`))
     },
     addFileToUploadeFileList (uploadedFile) {
       this.uploadedFileList.push({

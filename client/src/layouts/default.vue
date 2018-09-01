@@ -6,7 +6,7 @@
       >
 
         <q-toolbar-title>
-          Customer Statement Processor
+          Customer Statement Validator
           <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
         </q-toolbar-title>
       </q-toolbar>
