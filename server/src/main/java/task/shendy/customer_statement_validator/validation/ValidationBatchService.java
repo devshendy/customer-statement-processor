@@ -48,8 +48,8 @@ public class ValidationBatchService {
                 } catch (JobExecutionAlreadyRunningException
                         | JobRestartException
                         | JobInstanceAlreadyCompleteException
-                        | JobParametersInvalidException e) { // TODO: find a proper way to handle it
-                    e.printStackTrace();
+                        | JobParametersInvalidException e) { // TODO: Handle exception
+                    LoggerUtil.error(e.getMessage());
                 }
             }
         }, delay);

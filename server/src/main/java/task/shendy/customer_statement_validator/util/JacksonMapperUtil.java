@@ -28,8 +28,8 @@ public class JacksonMapperUtil {
         try {
             return jacksonObjectMapper.writeValueAsString(briefMetadata);
 
-        } catch (IOException e) { // TODO: Find a proper way to handle it
-            e.printStackTrace();
+        } catch (IOException e) { // TODO: Handle exception
+            LoggerUtil.error(e.getMessage());
             return null;
         }
     }
@@ -38,8 +38,8 @@ public class JacksonMapperUtil {
         try {
             jacksonObjectMapper.writeValue(metadataFile, metadata);
 
-        } catch (IOException e) { // TODO: Find a proper way to handle it
-            e.printStackTrace();
+        } catch (IOException e) { // TODO: Handle exception
+            LoggerUtil.error(e.getMessage());
         }
     }
 
@@ -47,8 +47,8 @@ public class JacksonMapperUtil {
         try {
             return jacksonObjectMapper.readValue(metadataFile, Metadata.class);
 
-        } catch (IOException e) { // TODO: Find a proper way to handle it
-            e.printStackTrace();
+        } catch (IOException e) { // TODO: Handle exception
+            LoggerUtil.error(e.getMessage());
             return null;
         }
     }
@@ -57,8 +57,8 @@ public class JacksonMapperUtil {
         try {
             return jacksonObjectMapper.readValue(metadataFile, BriefMetadata.class);
 
-        } catch (IOException e) { // TODO: Find ap proper way to handle it
-            e.printStackTrace();
+        } catch (IOException e) { // TODO: Handle exception
+            LoggerUtil.error(e.getMessage());
             return null;
         }
     }
