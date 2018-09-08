@@ -1,7 +1,7 @@
 # Customer Statement Processor
 There is some storage managed by the server, where user can upload customer statement files (xml or csv). Once file uploaded, a validation operation will be executed by the server to validate it.
 
-## Spring Batch Implementation
+## Spring Batch Solution
 A user as a client can do the following:
   * Upload customer statement file (xml or csv).
   * Subscribe to Server-Sent Events.
