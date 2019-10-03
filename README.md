@@ -16,13 +16,13 @@ The user can do the following:
 # Open new terminal tab, then run
 
 # Build Docker image from branch 'master'
-docker build https://github.com/devahmedshendy/customer-statement-processor.git
+docker build -t customer-statement-processor https://github.com/devahmedshendy/customer-statement-processor.git
 
 # Run Docker container for image 'customer_statement_processor:latest'
-docker container run --detach --publish 9090:9090 --name customer_statement_processor customer_statement_processor:latest
+docker container run --detach --publish 9090:9090 --name customer-statement-processor customer-statement-processor:latest
 
 # Watch container logs
-docker container logs -f customer_statement_processor
+docker container logs -f customer-statement-processor
 ```
 
   * Local
@@ -33,16 +33,16 @@ docker container logs -f customer_statement_processor
 git clone https://github.com/devahmedshendy/customer-statement-processor.git
 
 # Change directory to project
-cd customer_statement_processor
+cd customer-statement-processor
 
-# Build Docker image from master branch with name 'customer_statement_processor'
-docker build -t customer_statement_processor .
+# Build Docker image from master branch with name 'customer-statement-processor'
+docker build -t customer-statement-processor .
 
-# Run Docker container for image 'customer_statement_processor:latest'
-docker container run --detach --publish 9090:9090 --name customer_statement_processor customer_statement_processor:latest
+# Run Docker container for image 'customer-statement-processor:latest'
+docker container run --detach --publish 9090:9090 --name customer-statement-processor customer-statement-processor:latest
 
 # Watch container logs
-docker container logs -f customer_statement_processor
+docker container logs -f customer-statement-processor
 ```
 
 ### Build The Application - Using Maven
