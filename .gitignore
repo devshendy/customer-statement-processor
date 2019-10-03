@@ -1,6 +1,6 @@
 ### Project-Related Build ###
 *.jar
-out/
+target/
 
 ### IntelliJ IDEA ###
 .idea
